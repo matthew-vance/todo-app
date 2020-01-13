@@ -3,5 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
-  "main": "src/index.ts"
+  "main": "src/index.ts",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "start": "npm run dev -- --open --https",
+    "build": "parcel build src/index.html"
+  }
 }

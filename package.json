@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "lerna run build",
     "lint": "eslint . --cache --ext js,jsx,ts,tsx,md",
     "lint:fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"

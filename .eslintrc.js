@@ -16,5 +16,5 @@ module.exports = {
     semi: [2, "always"],
     "comma-dangle": [2, "always-multiline"],
   },
-  ignorePatterns: ["node_modules/"],
+  ignorePatterns: ["node_modules/", "dist/"],
 };
