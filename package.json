@@ -1,12 +1,8 @@
 {
-  "name": "todo-app",
-  "version": "1.0.0",
-  "description": "A playground for toying with all thing Javascript.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Matthew Vance",
-  "license": "ISC"
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
 }
