@@ -19,3 +19,7 @@ All the following commands assume you are running from the project root.
 ### Testing
 
     npm test
+
+### Linting
+
+    npm run lint
