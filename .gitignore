@@ -3,3 +3,5 @@ lerna-debug.log
 .eslintcache
 dist
 .cache
+--ext
+coverage

@@ -1,31 +1,42 @@
 {
   "scripts": {
-    "build": "lerna run build",
-    "lint": "eslint . --cache --ext js,jsx,ts,tsx,md",
+    "bootstrap": "lerna bootstrap --hoist --ci",
+    "build": "lerna run --parallel build",
+    "lint": "lerna run --parallel lint",
     "lint:fix": "npm run lint -- --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lerna run --parallel test:ci"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.2",
+    "@babel/preset-react": "^7.8.0",
+    "@types/node": "^13.1.6",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-jest": "^23.6.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
     "husky": "^4.0.7",
     "lerna": "^3.20.2",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm test && lerna run --concurrency 1 --stream precommit"
     }
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md}": [
-      "eslint --fix",
-      "git add"
-    ]
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }

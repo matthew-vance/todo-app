@@ -5,11 +5,30 @@
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
   "main": "src/index.ts",
   "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
     "parcel-bundler": "^1.12.4"
   },
   "scripts": {
     "dev": "parcel src/index.html",
     "start": "npm run dev -- --open --https",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "lint": "eslint . --cache --ext js,jsx,ts,tsx,md",
+    "precommit": "lint-staged",
+    "test": "npm run test:ci -- --watchAll",
+    "test:ci": "jest --coverage"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
