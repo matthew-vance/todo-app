@@ -4,6 +4,14 @@ node_js:
 install:
   - npm ci
   - npm run bootstrap -- --ci
-script:
-  - npm run lint
-  - npm test
+jobs:
+  include:
+    - stage: lint
+      script: npm run lint
+    - stage: test
+      script: npm test
+    - stage: build
+      script: npm run build
+    - stage: deploy
+      if: branch = master
+      script: npm run deploy:client

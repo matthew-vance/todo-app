@@ -19,7 +19,8 @@
     "lint": "eslint . --cache --ext js,jsx,ts,tsx,md",
     "precommit": "lint-staged",
     "test": "npm run test:ci -- --watchAll",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --coverage",
+    "delpoy": "netlify deploy --dir=dist"
   },
   "dependencies": {
     "react": "^16.12.0",
