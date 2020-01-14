@@ -8,7 +8,7 @@ All the following commands assume you are running from the project root.
 
 ### Setup
 
-    npm install && npm run bootstrap
+    npm install
 
 ### Building
 
