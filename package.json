@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist --ci",
+    "bootstrap": "lerna bootstrap --hoist",
     "build": "lerna run --parallel build",
     "lint": "lerna run --parallel lint",
     "lint:fix": "npm run lint -- --fix",
