@@ -4,3 +4,6 @@ node_js:
 install:
   - npm ci
   - npm run bootstrap -- --ci
+script:
+  - npm run lint
+  - npm test
