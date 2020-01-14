@@ -4,7 +4,8 @@
     "build": "lerna run --parallel build",
     "lint": "lerna run --parallel lint",
     "lint:fix": "npm run lint -- --fix",
-    "test": "lerna run --parallel test:ci"
+    "test": "lerna run --parallel test:ci",
+    "delpoy:client": "lerna run --scope client deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",

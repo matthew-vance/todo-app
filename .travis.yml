@@ -7,3 +7,9 @@ install:
 script:
   - npm run lint
   - npm test
+  - npm run build
+deploy:
+  provider: script
+  script: npm run deploy:client
+  on:
+    branch: master
