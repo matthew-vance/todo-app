@@ -5,3 +5,4 @@ dist
 .cache
 --ext
 coverage
+.netlify

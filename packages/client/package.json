@@ -21,7 +21,7 @@
     "precommit": "lint-staged",
     "test": "npm run test:ci -- --watchAll",
     "test:ci": "jest --coverage",
-    "delpoy": "netlify deploy --dir=dist"
+    "deploy": "netlify deploy -p --dir=dist"
   },
   "dependencies": {
     "react": "^16.12.0",
