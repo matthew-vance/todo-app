@@ -9,8 +9,19 @@ script:
   - npm test
   - npm run build
 deploy:
-  provider: script
-  skip_cleanup: true
-  script: npm run deploy
-  on:
-    branch: master
+  - provider: script
+    skip_cleanup: true
+    script: npm run deploy
+    on:
+      branch: master
+  - provider: heroku
+    api_key:
+      secure: JoW3ae01yWQnWm1+PdNZUu4pxdBAp4WVaBb/Tm57YW4rJxiwDnuFshTvbE6I5CBIo+fb+5xtTYhNKY8PKHBqPT/p70W/D6+KSv6y/pr/mx8I+sm7J4fPoAmC0XBdPkV/yNjwhQbSRZVQoCgsIeQP/MkwBkPT8RiILRGxosstIAnB8VwrH9BkiCK41RnAgHvJrwo2P6kAxZBzOOVrUF6CPkGEoHJ+M1R5klcf5LAFju7BlNTa+WrtzGQf7mKIh3y/zbWrILF6WYq0KjAJ0jZw+giEkif/eub7K03Ijmehj1bILV/1ezClUSmiYVTzS8/s15bCJuqn5cOWOMcI+yieoFiTdcum7IOrvBaHMihEHQBW9xtZlgKaNep2j00KHXvzT2XGAEejI0gK4lJrHXrSrdJ/ftzLSNG2VDdDIgrtMVCoMKb4p8WpbXyhtzhEEeAn/KtktZyDIQSsnG4XFxAe5LVIbCuHXA2zWhGTOon2QN7YfgPAsxuNbhm39ogzdDmVnWCZLdaClz9QW5kBvVUqq+yunjIJgIilcbeKW1yUczUlLDtO2fM2OO07t/Ohqf6pG2FWhIG3EhxkRIKoIh/JFy+yr+2HtticmFO7d4E4Bo4FPlI1TfgJwSYRPkQf9hwLgoTLmIIo6V6p/P+asZqMz6isDi4nQD0x0SO0D3lQPuM=
+    app: glacial-river-84174
+    run:
+      - npm ci
+      - npm run bootstrap -- --ci
+      - npm run build
+      - npm run start:api
+    on:
+      branch: master
